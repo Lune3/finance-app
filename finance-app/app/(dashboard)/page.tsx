@@ -1,8 +1,10 @@
-import { UserButton } from "@clerk/nextjs";
-import {User} from "lucide-react"
+"use client";
 
 export default function Home(){
+  
   return (
-    <UserButton afterSwitchSessionUrl="/"></UserButton>
+    <div>
+      DashBoard Page
+    </div>
   )
 }

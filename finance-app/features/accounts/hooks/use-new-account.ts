@@ -1,5 +1,7 @@
 import {create} from "zustand";
 
+//hook for opening and closing on ui not specific to accounts
+
 type NewAccountState = {
     isOpen: boolean;
     onOpen: () => void;

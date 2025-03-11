@@ -20,7 +20,7 @@ export const useCreateAccount= () => {
         },
         onSuccess:() => {
             toast.success("Account Created");
-            queryClient.invalidateQueries({queryKey:["accounts"]});
+            queryClient.invalidateQueries({queryKey:["accounts"]});//will refetch get after success post of accounts
         },
         onError:() => {
             toast.error("Failed to create account");

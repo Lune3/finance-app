@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import * as React from "react";
 import { Input } from "@/components/ui/input";
+import { useConfirm } from "@/hooks/use-confirm";
 
 import {
   Table,
@@ -46,7 +47,11 @@ export function DataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
-  const [rowSelection, setRowSelection] = React.useState({})
+  const [rowSelection, setRowSelection] = React.useState({});
+  const [ConfirmDialog,confirm] = useConfirm(
+    "Are you Sure",
+    "You are about to perform a bulk delete"
+  );
 
 
   const table = useReactTable({
@@ -70,6 +75,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
+      <ConfirmDialog/>
       <div className="flex items-center py-4">
         <Input
           placeholder={`Filter ${filterKey}...`}
@@ -85,9 +91,12 @@ export function DataTable<TData, TValue>({
           size={"sm"}
           variant={"outline"}
           className="ml-auto font-normal text-xs"
-          onClick={() => {
-            onDelete(table.getFilteredSelectedRowModel().rows);
-            table.resetRowSelection();
+          onClick={async () => {
+            const ok = await confirm(); 
+            if(ok){
+              onDelete(table.getFilteredSelectedRowModel().rows);
+              table.resetRowSelection();
+            }
           }}
           >
             <Trash className="size-4 mr-2"></Trash>

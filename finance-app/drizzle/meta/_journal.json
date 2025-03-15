@@ -15,6 +15,13 @@
       "when": 1739208029081,
       "tag": "0001_premium_tarot",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1742049395882,
+      "tag": "0002_bizarre_dagger",
+      "breakpoints": true
     }
   ]
 }

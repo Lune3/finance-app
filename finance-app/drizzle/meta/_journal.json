@@ -22,6 +22,13 @@
       "when": 1742049395882,
       "tag": "0002_bizarre_dagger",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1742292833592,
+      "tag": "0003_absurd_cyclops",
+      "breakpoints": true
     }
   ]
 }

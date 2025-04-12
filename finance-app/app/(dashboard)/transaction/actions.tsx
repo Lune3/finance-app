@@ -3,8 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { DropdownMenu,DropdownMenuContent,DropdownMenuItem,DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 import { Edit, MoreHorizontal, Trash } from "lucide-react";
-import { useOpenAccount } from "@/features/accounts/hooks/use-open-accounts";
-import { useDeleteAccount } from "@/features/accounts/api/use-delete-accounts";
+import { useOpenTransaction } from "@/features/transactions/hooks/use-open-transactions";
+import { useDeleteTransaction } from "@/features/transactions/api/use-delete-transactions";
 import { useConfirm } from "@/hooks/use-confirm";
 
 type Props = {
@@ -12,9 +12,9 @@ type Props = {
 }
 
 export const Action = ({id} : Props) => {
-    const [ConfirmDialog,confirm] = useConfirm("Are you Sure?","You are about to delete this account.")
-    const {onOpen} = useOpenAccount();
-    const deleteMutation = useDeleteAccount(id);
+    const [ConfirmDialog,confirm] = useConfirm("Are you Sure?","You are about to delete this Transaction.")
+    const {onOpen} = useOpenTransaction();
+    const deleteMutation = useDeleteTransaction(id);
     const handleDelete = async () => {
         const ok = await confirm();
 

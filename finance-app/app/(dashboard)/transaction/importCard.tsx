@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ImportTable } from "./import-table";
 import { convertAmountToMilliunits } from "@/lib/utils";
 import { format, parse } from "date-fns";
+
 const dateFormat = "yyyy-MM-dd HH:mm:ss";
 const outputFormat = "yyyy-MM-dd";
 
@@ -87,6 +88,7 @@ export const ImportCard = ({data,onCancel,onSubmit} : Props) => {
             amount: convertAmountToMilliunits(parseFloat(item.amount)),
             date: format(parse(item.data,dateFormat,new Date()),outputFormat)
         }));
+        console.log({mappedData});
         onSubmit(formattedData);
     }
 
@@ -101,7 +103,7 @@ export const ImportCard = ({data,onCancel,onSubmit} : Props) => {
                         <Button onClick={onCancel} size={"sm"} className="w-full lg:w-auto ">
                             Cancel
                         </Button>
-                        <Button className="w-full lg:w-auto " disabled={progress < requiredOptions.length} onClick={handleContinue}>
+                        <Button size={"sm"} className="w-full lg:w-auto" disabled={progress < requiredOptions.length} onClick={handleContinue}>
                             Continue ({progress} / {requiredOptions.length})
                         </Button>
                     </div>

@@ -14,11 +14,13 @@ export const ImportTable = ({headers,body,selectedColumns,onTableHeadSelectChang
         <div className="rounded-md border overflow-hidden">
             <Table>
                 <TableHeader className="bg-muted">
-                    {headers.map((_item,index) => (
-                        <TableHead key={index}>
-                            <TableHeadSelect columnIndex={index}selectedColumns={selectedColumns} onChange={onTableHeadSelectChange}/>
-                        </TableHead>
-                    ))}
+                    <TableRow>
+                        {headers.map((_item,index) => (
+                            <TableHead key={index}>
+                                <TableHeadSelect columnIndex={index}selectedColumns={selectedColumns} onChange={onTableHeadSelectChange}/>
+                            </TableHead>
+                        ))}
+                    </TableRow>
                 </TableHeader>
                 <TableBody>
                     {body.map((row:string[],index) => (

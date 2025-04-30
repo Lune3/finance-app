@@ -36,7 +36,7 @@ const TransactionPage = () => {
 
     const onUpload = (results : typeof INITIAL_IMPORT_RESULTS) => {
         setImportResults(results);
-        setVariant(VARIANTS.IMPORT)
+        setVariant(VARIANTS.IMPORT);
     };
 
     const onCancelImport = () => {

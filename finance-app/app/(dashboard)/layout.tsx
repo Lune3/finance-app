@@ -5,6 +5,7 @@ type Props = {
     children : React.ReactNode;
 }
 
+//this layout page is a dynamic page implementation in nextjs like using context from react router
 const DashboardLayout = ({children} : Props) => {
     return (
         <>

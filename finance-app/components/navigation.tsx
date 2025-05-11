@@ -12,7 +12,7 @@ import { Menu } from "lucide-react";
 const routes = [
     {
         href :'/',
-        label :"overview",
+        label :"Overview",
     },
     {
         href :'/transaction',
@@ -58,7 +58,8 @@ export const Navigation = () => {
                                     variant={route.href === pathname ? "secondary" : "ghost"}
                                     onClick={() => onClick(route.href)}
                                     className="w-full justify-start"
-                                >{route.label}</Button>
+                                    >{route.label}
+                                </Button>
                             )
                         })}
                     </nav>

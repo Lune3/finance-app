@@ -15,12 +15,11 @@ export function convertAmountFromMilliunits(amount: number) {
 };
 
 export function formatCurrency(value: number){
-  const finalValue = convertAmountFromMilliunits(value);
   return Intl.NumberFormat("en-IN",{
     style:"currency",
     currency:"INR",
     minimumFractionDigits:2,
-  }).format(finalValue);
+  }).format(value);
 }
 
 export function calculatePercentageChange(

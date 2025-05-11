@@ -33,7 +33,7 @@ const app = new Hono()
 
         const startDate = from
             ?parse(from,"yyyy-MM-dd",new Date())
-            : defaultTo;
+            : defaultFrom;
         
         const endDate = to
             ? parse(to, "yyyy-MM-dd", new Date())

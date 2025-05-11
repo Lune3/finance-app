@@ -37,13 +37,13 @@ export const Chart = ({data = []} : Props) => {
                                 <p className="line-clamp-1">Area Chart</p>
                             </div>
                         </SelectItem>
-                        <SelectItem value="Line">
+                        <SelectItem value="line">
                             <div className="flex items-center">
                                 <LineChart className="size-4 mr-2 shrink-0"/>
                                 <p className="line-clamp-1">Line Chart</p>
                             </div>
                         </SelectItem>
-                        <SelectItem value="Bar">
+                        <SelectItem value="bar">
                             <div className="flex items-center">
                                 <BarChart3 className="size-4 mr-2 shrink-0"/>
                                 <p className="line-clamp-1">Bar Chart</p>

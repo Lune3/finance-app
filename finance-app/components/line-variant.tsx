@@ -19,7 +19,7 @@ export const LineVariant = ({data} : Props) => {
                 <XAxis axisLine={false} tickLine={false} dataKey="date" tickFormatter={(value) => format(value,"dd MMM")} style={{fontSize: "12px"}} tickMargin={16}/>
                 <Tooltip content={<CustomToolTip/>}/>
                 <Line dot={false} dataKey={"income"} stroke="#3b82f6" strokeWidth={2} className="drop-shadow-sm"/>
-                <Line dot={false} dataKey={"expenses"} stroke="#3b82f6" strokeWidth={2} className="drop-shadow-sm"/>
+                <Line dot={false} dataKey={"expenses"} stroke="#f43f5e" strokeWidth={2} className="drop-shadow-sm"/>
             </LineChart>
         </ResponsiveContainer>
     )
